@@ -1,0 +1,24 @@
+<html ng-app="main_app">
+
+<head>
+    <title>Module1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.14/angular.js"></script>
+
+</head>
+
+<body ng-controller="module1">
+
+<div>
+    <!--Will run for empty input as well-->
+    <input type="text" ng-model="text" placeholder="Enter Items "></br>
+    <span ng-module="output">{{output}}</span></br>
+    <button ng-click="check()">Check if too mch !</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+
+</html>
