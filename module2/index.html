@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="main">
+<head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.14/angular.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+        .emptyMessage {
+            font-weight: bold;
+            color: red;
+            font-size: 1.2em;
+        }
+        li {
+            margin-bottom: 7px;
+            font-size: 1.2em;
+        }
+        li > button {
+            margin-left: 6px;
+        }
+        button > span {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Shopping List Check Off</h1>
+
+    <div class="row">
+
+        <!-- To Buy List -->
+        <div class="col-md-6" ng-controller="toBuy as buy">
+            <h2>To Buy:</h2>
+            <ul>
+                <li ng-repeat="item in buy.items">Buy {{item.quantity}} {{item.name}} <button ng-click="buy.buy($index,item.quantity,item.name)" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+            </ul>
+            <div class="emptyMessage" ng-show="buy.check">Everything is bought!</div>
+        </div>
+
+        <!-- Already Bought List -->
+        <div class="col-md-6" ng-controller="bought as purchased">
+            <h2>Already Bought:</h2>
+            <ul>
+                <li ng-repeat="item in purchased.items">Bought {{item.quantity}} of {{item.name}}</li>
+            </ul>
+            <div class="emptyMessage" ng-show="purchased.check()">Nothing bought yet.</div>
+        </div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
