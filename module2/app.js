@@ -58,6 +58,10 @@
             {
                 name:'Onion',
                 quantity:'2 kgs'
+            },
+            {
+                name:'Apple',
+                quantity:'5 kgs'
             }
         ];
 
