@@ -23,7 +23,7 @@
         var found=[];
         list.key="";
         list.onRemove=function (index) {
-          MenuSearchService.remove(index);  
+            found.splice(index, 1);
         };
         list.search=function () {
             if(list.key.trim()==""){
@@ -70,10 +70,8 @@
    function MenuSearchService($http) {
         var service=this;
        var found=[];
-       
-       service.remove=function (index) {
-           found.splice(index, 1);
-       };
+
+
         service.getMatchedMenuItems=function (key) {
             found=[];
 
