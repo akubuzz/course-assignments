@@ -27,7 +27,7 @@
         };
         list.search=function () {
             if(list.key.trim()==""){
-                list.error="Nothing Found!!";
+                list.error="Nothing Found";
                 list.items=[];
                 return;
             }
